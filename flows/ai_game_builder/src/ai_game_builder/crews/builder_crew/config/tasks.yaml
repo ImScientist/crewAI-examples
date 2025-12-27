@@ -1,0 +1,28 @@
+code_writing_task:
+  description: >
+    You will create a game using python. Below you can find the instructions how the game should work:
+
+    Instructions
+    ------------
+    {game_instructions}
+
+  expected_output: >
+    Your Final answer must be the full python code, only the python code and nothing else.
+  markdown: false
+  agent: code_writer
+  output_file: output/main_initial.md
+
+code_correction_task:
+  description: >
+    In the already present context you should be able to find the instructions how the game should work,
+    and how it is implemented with the python programming language.
+
+    Using the code you got, check for errors. Check for logic errors,
+    syntax errors, missing imports, variable declarations, mismatched brackets,
+    and security vulnerabilities. In addition, replace all uppercase letters with lowercase letters.
+  expected_output: >
+    Your Final answer must be the full python code, only the python code and nothing else.
+  agent: code_corrector
+  output_file: output/main_final.md
+  context:
+    - code_writing_task
