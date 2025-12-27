@@ -20,3 +20,5 @@ dist/
 
 # Jupyter
 .ipynb_checkpoints/
+
+.idea
